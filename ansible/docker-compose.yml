@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  ansible:
+    container_name: ansible
+    image: cyberxsecurity/ansible
+    volumes:  
+      - ./test_dir:/test_dir
+    networks:
+      app-net:
+        ipv4_address: 10.10.0.4
+
+
+
+#networks:
+#  app-net:
+#    ipam:
+#      driver: default
+#      config:
+#        - subnet: "10.10.0.0/24"    
