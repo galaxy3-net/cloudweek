@@ -5,7 +5,7 @@ services:
     container_name: jumpserver
     image: cyberxsecurity/dvwa
     volumes:  
-      - ./test_dir:/test_dir
+      - /home/azureuser/test_dir:/test_dir
     networks:
       app-net:
         ipv4_address: 10.10.0.3
@@ -15,9 +15,9 @@ services:
     image: cyberxsecurity/ansible
     tty: true
     volumes:  
-      - ./test_dir:/test_dir
-      - ./etc_ansible:/etc/ansible
-      - ./.ssh:/root/.ssh
+      - /home/azureuser/test_dir:/test_dir
+      - /home/azureuser/etc_ansible:/etc/ansible
+      - /home/azureuser/.ssh:/root/.ssh
     networks:
       app-net:
         ipv4_address: 10.10.0.4
